@@ -68,9 +68,11 @@ def process_message(header, payload, socket):
         elif header[2] == MSG_BYE:
             if (header[6], header[4]) in neighbours:
                 neighbours.remove((header[6], header[4]))
-                connections.remove(socket)
                 print("Neighbours:")
                 print(neighbours)
+            if (header[6], socket) in connections:
+                connections.remove((header[6], socket))
+
         elif header[2] == MSG_JOIN:
             if not (header[6], header[4]) in neighbours:
                 neighbours.append((header[6], header[4]))
