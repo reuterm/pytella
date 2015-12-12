@@ -6,8 +6,7 @@ import sys
 from p2p import parseReceivedMessage, createMessage, ipToNum
 
 # =============================================================================
-# Script for creating a node for the P2P network. Connects to 130.233.195.30
-# by default.
+# Script for creating a node for the P2P network.
 # =============================================================================
 
 # List of known neighbours
